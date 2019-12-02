@@ -10,8 +10,16 @@ $font-size: 1rem;
     line-height: 1.5 * $font-size;
     font-size: $font-size;
     text-align: center;
+    margin: .5rem 0;
     &:focus {
       outline: none;
     }
+    &:focus::placeholder{
+      color: transparent;
+    }
+  }
+  .BtnGeneric{
+    margin-top: 10px;
+    padding: .5rem 1rem;
   }
 }

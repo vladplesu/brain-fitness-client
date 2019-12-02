@@ -16,7 +16,7 @@ class Login extends Component {
   }
 
   isInvalid = () => {
-    return !(this.state.email.length > 5 && this.state.password);
+    return !(this.state.email.length > 5 && this.state.password.length > 5);
   }
 
   handleSubmit = async e => {
