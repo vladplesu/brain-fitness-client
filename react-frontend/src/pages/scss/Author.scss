@@ -1,0 +1,141 @@
+@import './utilities/variables';
+
+$color: #3a89c2;
+$danger: #dc3545;
+
+.container {
+  text-align: right;
+  margin: 3rem;
+  width: 100%;
+  @media (min-width: $media-sm) {
+    width: 90%;
+  }
+  @media (min-width: $media-md) {
+    width: 80%;
+  }
+  @media (min-width: $media-lg) {
+    width: 70%;
+  }
+  @media (min-width: $media-xl) {
+    width: 60%;
+  }
+}
+
+.add-btn {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0.5rem 5rem;
+  @media (max-width: $media-sm) {
+    width: 100%;
+  }
+}
+
+.table-container {
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+  margin-top: 1.2rem;
+  text-align: left;
+  & .table-nav {
+    align-items: center;
+    background-color: $color;
+    color: #fff;
+    display: flex;
+    height: 1.9rem;
+    padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+    position: relative;
+    & h3 {
+      margin-left: 1rem;
+    }
+    & > svg {
+      height: 100%;
+    }
+  }
+}
+
+.search-container {
+  display: inline-flex;
+  margin-left: auto;
+  & input {
+    border: none;
+    height: 0;
+    overflow-y: hidden;
+    left: 0;
+    padding: 0 2.5rem 0 2.5rem;
+    position: absolute;
+    top: 3.1rem;
+    transition: ease-in-out 0.5s all;
+    width: 100%;
+    &.show {
+      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+      height: 1.5rem;
+      padding-top: 0.65rem;
+      padding-bottom: 0.65rem;
+    }
+  }
+  & svg {
+    bottom: 0;
+    color: #fff;
+    cursor: pointer;
+    height: 1.2rem;
+    margin: auto 0 auto;
+    position: absolute;
+    right: 2rem;
+    top: 0;
+  }
+  @media (min-width: $media-sm) {
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    flex: 0 1 350px;
+    transition: flex-basis 0.5s ease;
+    &:focus-within {
+      flex-basis: 400px;
+    }
+    & input {
+      border: none;
+      height: unset;
+      position: unset;
+    }
+    & svg {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+table {
+  & .table-head {
+    margin-bottom: 0.6rem;
+  }
+  & .table-body,
+  .table-head {
+    @media (min-width: $media-sm) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+  & .table-body tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  & .table-cell {
+    flex-basis: 80px;
+    & > span {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.3);
+      margin: 0 0.5rem;
+      &.edit:hover {
+        color: $color;
+      }
+      &.delete:hover {
+        color: $danger;
+      }
+      & svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    & > span:first-of-type {
+      margin-left: auto;
+    }
+  }
+  & tr th:first-of-type {
+    flex: 2 0 140px;
+  }
+}

@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar';
 import AddAdmin from './AddAdmin';
 import SignupAdmin from './SignupAdmin';
 import Login from './Login';
+import Authors from './Authors/index';
 
 class App extends Component {
   state = {
@@ -54,6 +55,11 @@ class App extends Component {
         ) : (
           <Redirect to='/login' />
         )}
+          <Route
+            exact
+            path='/admin/authors'
+            render={({ history }) => <Authors history={history} />}
+          />
         </Switch>
       </div>
     );
